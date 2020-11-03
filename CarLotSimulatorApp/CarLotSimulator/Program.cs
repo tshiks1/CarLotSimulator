@@ -6,6 +6,47 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
+            var honda = new Car();
+            honda.EngineNoise = "Shhh";
+            honda.HonkNoise = "Peep";
+            honda.IsDriveable = true;
+            honda.Make = "Honda";
+            honda.Model = "CR-V";
+            honda.Year = 2015;
+
+
+
+
+
+
+            var mazda = new Car();
+            mazda.EngineNoise = "Vroom";
+            mazda.HonkNoise = "TTT";
+            mazda.IsDriveable = false;
+            mazda.Make = "Mazda";
+            mazda.Model = "Protege";
+            mazda.Year = 2016;
+
+
+            Car nissan = new Car();
+
+            nissan.EngineNoise = "Clak clak";
+            nissan.HonkNoise = "chap chap";
+           nissan.IsDriveable = true;
+            nissan.Make = "Nissan";
+            nissan.Model = "Altima";
+            nissan.Year = 2018;
+
+            mazda.MakeEngineNoise(mazda.EngineNoise);
+            mazda.MakeHonkNoise(mazda.HonkNoise);
+
+            nissan.MakeEngineNoise(nissan.EngineNoise);
+            nissan.MakeHonkNoise(nissan.HonkNoise);
+
+            honda.MakeEngineNoise(honda.EngineNoise);
+            honda.MakeHonkNoise(honda.HonkNoise);
+
+
             //TODO
 
             //Create a seperate class file called Car
