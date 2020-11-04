@@ -8,20 +8,8 @@ namespace CarLotSimulator
     {
         public string Make { get; set; }
 
-
-        private int year;
-        public int Year
-        {
-            get
-            {
-                return year;
-            }
-
-            set
-            {
-                _ = year;
-            }
-        }
+        public int Year { get; set; }
+     
         public string Model { get; set; }
         public string EngineNoise { get; set; }
         public bool IsDriveable { get; set; }

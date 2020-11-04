@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CarLotSimulator
 {
@@ -6,6 +7,14 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
+            var lot = new CarLot(); 
+           
+           
+                
+
+
+
+            //dot notation.-properties.
             var honda = new Car();
             honda.EngineNoise = "Shhh";
             honda.HonkNoise = "Peep";
@@ -15,27 +24,29 @@ namespace CarLotSimulator
             honda.Year = 2015;
 
 
+            lot.Cars.Add("honda");
 
 
 
 
-            var mazda = new Car();
-            mazda.EngineNoise = "Vroom";
-            mazda.HonkNoise = "TTT";
-            mazda.IsDriveable = false;
-            mazda.Make = "Mazda";
-            mazda.Model = "Protege";
-            mazda.Year = 2016;
 
+            var mazda = new Car()
+            {
+                //object initializer -properties.
+                EngineNoise ="Vroom",
+                HonkNoise = "TTT",
+                IsDriveable = false,
+                Make  ="Mazda",
+                Model ="Protege",
+                Year = 2016
+            };
+            lot.Cars.Add(mazda);
 
-            Car nissan = new Car();
+            //object initializer inline-properties .
+            Car nissan = new Car(){ EngineNoise="Clak ",HonkNoise ="Chap",IsDriveable=true,Make ="Nissan",Model="Altima",Year=2016};
 
-            nissan.EngineNoise = "Clak clak";
-            nissan.HonkNoise = "chap chap";
-           nissan.IsDriveable = true;
-            nissan.Make = "Nissan";
-            nissan.Model = "Altima";
-            nissan.Year = 2018;
+            lot.Cars.Add(nissan);
+
 
             mazda.MakeEngineNoise(mazda.EngineNoise);
             mazda.MakeHonkNoise(mazda.HonkNoise);
@@ -45,6 +56,7 @@ namespace CarLotSimulator
 
             honda.MakeEngineNoise(honda.EngineNoise);
             honda.MakeHonkNoise(honda.HonkNoise);
+
 
 
             //TODO
@@ -69,6 +81,12 @@ namespace CarLotSimulator
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+
+            lot.Cars = new List<Car>() { mazda, nissan, honda };
+            foreach (var Caritem in lot.Cars)
+            {
+                Console.WriteLine($"{Caritem.Year},{Caritem.Make},{Caritem.Model}");
+            }
         }
     }
 }
