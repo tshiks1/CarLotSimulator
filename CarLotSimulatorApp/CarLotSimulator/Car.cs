@@ -6,6 +6,13 @@ namespace CarLotSimulator
 {
     class Car
     {
+        public Car()
+        {
+            //static exercise 
+            CarLot.numberOfCars++;
+            
+        }
+
         public string Make { get; set; }
 
         public int Year { get; set; }

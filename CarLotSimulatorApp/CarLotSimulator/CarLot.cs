@@ -9,13 +9,10 @@ namespace CarLotSimulator
    //At the end iterate through the list printing each of car's Year, Make, and Model to the console
     class CarLot
     {
-       /* public CarLot ()
-        {
+        public List<Car>Cars = new List<Car>();
 
-        }*/
-        //public CarLot(){ List<string> listOfCars = new List<string>(); }
-        public List<Car> Cars { get; set; }
-
+        public static int numberOfCars; //field
+             
 
     }
 }

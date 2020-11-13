@@ -7,13 +7,9 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
-            var lot = new CarLot(); 
-           
-           
-                
 
-
-
+            
+    
             //dot notation.-properties.
             var honda = new Car();
             honda.EngineNoise = "Shhh";
@@ -23,12 +19,8 @@ namespace CarLotSimulator
             honda.Model = "CR-V";
             honda.Year = 2015;
 
-
-            lot.Cars.Add("honda");
-
-
-
-
+            Console.WriteLine($"The current number of cars in the car lot is : {CarLot.numberOfCars}");
+            Console.WriteLine($" ");
 
             var mazda = new Car()
             {
@@ -40,12 +32,17 @@ namespace CarLotSimulator
                 Model ="Protege",
                 Year = 2016
             };
-            lot.Cars.Add(mazda);
+
+            Console.WriteLine($"The current number of cars in the car lot is : {CarLot.numberOfCars}");
+            Console.WriteLine($" ");
+
 
             //object initializer inline-properties .
             Car nissan = new Car(){ EngineNoise="Clak ",HonkNoise ="Chap",IsDriveable=true,Make ="Nissan",Model="Altima",Year=2016};
+            Console.WriteLine($"The current number of cars in the car lot is : {CarLot.numberOfCars}");
 
-            lot.Cars.Add(nissan);
+            Console.WriteLine($" ");
+
 
 
             mazda.MakeEngineNoise(mazda.EngineNoise);
@@ -56,6 +53,7 @@ namespace CarLotSimulator
 
             honda.MakeEngineNoise(honda.EngineNoise);
             honda.MakeHonkNoise(honda.HonkNoise);
+
 
 
 
@@ -82,8 +80,14 @@ namespace CarLotSimulator
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
 
-            lot.Cars = new List<Car>() { mazda, nissan, honda };
-            foreach (var Caritem in lot.Cars)
+            // var cars = new List<Car>() { mazda, nissan, honda };
+
+            var lot = new List<Car>();
+            lot.Add(nissan);
+            lot.Add(mazda);
+            lot.Add(honda);
+
+            foreach (var Caritem in lot)
             {
                 Console.WriteLine($"{Caritem.Year},{Caritem.Make},{Caritem.Model}");
             }
